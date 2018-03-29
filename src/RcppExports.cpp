@@ -22,12 +22,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // read_bed_cpp
-IntegerMatrix read_bed_cpp(String file, int nind, int nsnp);
+IntegerMatrix read_bed_cpp(std::string file, int nind, int nsnp);
 RcppExport SEXP _r3_read_bed_cpp(SEXP fileSEXP, SEXP nindSEXP, SEXP nsnpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< String >::type file(fileSEXP);
+    Rcpp::traits::input_parameter< std::string >::type file(fileSEXP);
     Rcpp::traits::input_parameter< int >::type nind(nindSEXP);
     Rcpp::traits::input_parameter< int >::type nsnp(nsnpSEXP);
     rcpp_result_gen = Rcpp::wrap(read_bed_cpp(file, nind, nsnp));
