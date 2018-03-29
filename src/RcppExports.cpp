@@ -22,12 +22,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // read_bed_cpp
-IntegerMatrix read_bed_cpp(String file, int nind, int nsnp);
+IntegerMatrix read_bed_cpp(std::string file, int nind, int nsnp);
 RcppExport SEXP _r3_read_bed_cpp(SEXP fileSEXP, SEXP nindSEXP, SEXP nsnpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< String >::type file(fileSEXP);
+    Rcpp::traits::input_parameter< std::string >::type file(fileSEXP);
     Rcpp::traits::input_parameter< int >::type nind(nindSEXP);
     Rcpp::traits::input_parameter< int >::type nsnp(nsnpSEXP);
     rcpp_result_gen = Rcpp::wrap(read_bed_cpp(file, nind, nsnp));
@@ -48,7 +48,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // write_markers_cpp
-void write_markers_cpp(NumericVector marker, NumericVector freq, NumericMatrix genotype, CharacterVector memberID, String outfile);
+void write_markers_cpp(NumericVector marker, NumericVector freq, NumericMatrix genotype, CharacterVector memberID, std::string outfile);
 RcppExport SEXP _r3_write_markers_cpp(SEXP markerSEXP, SEXP freqSEXP, SEXP genotypeSEXP, SEXP memberIDSEXP, SEXP outfileSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -56,7 +56,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type freq(freqSEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type genotype(genotypeSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type memberID(memberIDSEXP);
-    Rcpp::traits::input_parameter< String >::type outfile(outfileSEXP);
+    Rcpp::traits::input_parameter< std::string >::type outfile(outfileSEXP);
     write_markers_cpp(marker, freq, genotype, memberID, outfile);
     return R_NilValue;
 END_RCPP

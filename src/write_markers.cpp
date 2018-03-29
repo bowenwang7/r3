@@ -4,9 +4,9 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-void write_markers_cpp(NumericVector marker, NumericVector freq, NumericMatrix genotype, CharacterVector memberID, String outfile) {
+void write_markers_cpp(NumericVector marker, NumericVector freq, NumericMatrix genotype, CharacterVector memberID, std::string outfile) {
   std::ofstream markerfile;
-  markerfile.open(outfile);
+  markerfile.open(outfile.c_str());
   markerfile << "map marker positions\n";
   for(int i = 0; i < marker.length(); i++){
     markerfile << marker[i] << "\n";

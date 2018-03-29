@@ -4,7 +4,7 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-IntegerMatrix read_bed_cpp(String file, int nind, int nsnp){
+IntegerMatrix read_bed_cpp(std::string file, int nind, int nsnp){
   // first three bytes of plink bed file are fixed (SNP-major format)
   IntegerMatrix first3bytes(3, 8);
   first3bytes.row(0) = IntegerVector::create(0, 1, 1, 0, 1, 1, 0, 0);
@@ -14,7 +14,7 @@ IntegerMatrix read_bed_cpp(String file, int nind, int nsnp){
   // initialize output matrix of genotypes  
   IntegerMatrix geno_mat(nind, nsnp);
   
-  std::ifstream f(file, std::ios::binary | std::ios::in);
+  std::ifstream f(file.c_str(), std::ios::binary | std::ios::in);
 
   char c;
   int bytecount = 0;

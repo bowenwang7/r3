@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2018-03-27
 Author: Bowen Wang
 Maintainer: Bowen Wang <bowenwang7@gmail.com>
-Description: This package provides useful functions for studying realized genetic relatedness between people. Users will be able to simulate inheritance patterns given pedigree structures, generate SNP marker data given inheritance patterns, and estimate realized relatedness between pairs of individuals using SNP marker data. This work was supported by National Institutes of Health grants R37 GM-046255.
+Description: Functions for studying realized genetic relatedness between people. Users will be able to simulate inheritance patterns given pedigree structures, generate SNP marker data given inheritance patterns, and estimate realized relatedness between pairs of individuals using SNP marker data. This work was supported by National Institutes of Health grants R37 GM-046255.
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.16), kernlab
 LinkingTo: Rcpp
