@@ -22,7 +22,11 @@
 #' marker = sort(runif(7,0,100))
 #' write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE)
 #' @export
-write.ibdhaplo = function(marker, freq, data, member, input.counts = FALSE, input.haplotype = FALSE, outfile = "./ibdhaplo.markers"){
+write.ibdhaplo = function(marker, freq, data, member, input.counts = FALSE, input.haplotype = FALSE, outfile = NULL){
+  if(is.null(outfile)){
+    stop("Please specify an output file.")
+  }
+  
   if(input.counts){
     genotype = t(apply(data, 1, function(x) c(sapply(x, function(y) c(rep(1,y),rep(2,2-y))))))
   }else{
