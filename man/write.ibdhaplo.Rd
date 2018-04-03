@@ -5,7 +5,7 @@
 \title{Write IBDHAPLO}
 \usage{
 write.ibdhaplo(marker, freq, data, member, input.counts = FALSE,
-  input.haplotype = FALSE, outfile = "./ibdhaplo.markers")
+  input.haplotype = FALSE, outfile = NULL)
 }
 \arguments{
 \item{marker}{numeric vector, marker genetic positions in cM.}
