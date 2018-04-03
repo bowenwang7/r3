@@ -20,7 +20,7 @@
 #' nhaplo = 4 # number of founder haplotypes
 #' haplotype = sim.haplotype(freq, nhaplo)
 #' marker = sort(runif(7,0,100))
-#' write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE)
+#' write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE, outfile = "./ibdhaplo.markers")
 #' @export
 write.ibdhaplo = function(marker, freq, data, member, input.counts = FALSE, input.haplotype = FALSE, outfile = NULL){
   if(is.null(outfile)){

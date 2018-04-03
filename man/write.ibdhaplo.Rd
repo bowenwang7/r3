@@ -34,7 +34,7 @@ freq = runif(nsnp, 0.05, 0.95)
 nhaplo = 4 # number of founder haplotypes
 haplotype = sim.haplotype(freq, nhaplo)
 marker = sort(runif(7,0,100))
-write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE)
+write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE, outfile = "./ibdhaplo.markers")
 }
 \references{
 MORGAN Tutorial, \url{https://www.stat.washington.edu/thompson/Stuff/morgan-tut.html}.
