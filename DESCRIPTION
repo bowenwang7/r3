@@ -1,4 +1,4 @@
-Package: r3
+Package: 'r3'
 Type: Package
 Title: 'Realized Relatedness Rtools'
 Version: 1.0
