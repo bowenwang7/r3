@@ -4,7 +4,7 @@
 \alias{write.ibdhaplo}
 \title{Write IBDHAPLO}
 \usage{
-write.ibdhaplo(marker, freq, data, member, input.counts = FALSE,
+write.ibdhaplo(marker, freq, data, member, input.allele = TRUE,
   input.haplotype = FALSE, outfile = NULL)
 }
 \arguments{
@@ -16,7 +16,7 @@ write.ibdhaplo(marker, freq, data, member, input.counts = FALSE,
 
 \item{member}{string vector, member ID.}
 
-\item{input.counts}{logical, default FALSE.}
+\item{input.allele}{logical, default TRUE.}
 
 \item{input.haplotype}{logical, default FALSE.}
 
@@ -26,15 +26,18 @@ write.ibdhaplo(marker, freq, data, member, input.counts = FALSE,
 \code{write.ibdhaplo} prepares the marker data file for running IBDHAPLO.
 }
 \details{
-The input marker data needs to be subject/haplotype by marker/allele. For example, suppose \code{data} is a 4x10 matrix, use \code{input.counts = TRUE} if \code{data} contains counts of reference alleles of 4 individuals at 10 markers; use \code{input.haplotype = TRUE} if \code{data} contains allelic types of 4 haplotypes at 10 markers; use default options if \code{data} contains allelic types of 4 individuals at 5 markers.
+The input marker data needs to be subject/haplotype by marker/allele. For example, suppose \code{data} is a 4x10 matrix, use \code{input.allele = FALSE} if \code{data} contains counts of reference alleles of 4 individuals at 10 markers; use \code{input.haplotype = TRUE} if \code{data} contains allelic types of 4 haplotypes at 10 markers; use default options if \code{data} contains allelic types of 4 individuals at 5 markers.
 }
 \examples{
+\dontrun{
 nsnp = 7 # number of SNPs
 freq = runif(nsnp, 0.05, 0.95)
 nhaplo = 4 # number of founder haplotypes
 haplotype = sim.haplotype(freq, nhaplo)
 marker = sort(runif(7,0,100))
-write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), input.haplotype = TRUE, outfile = "./ibdhaplo.markers")
+write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), 
+input.haplotype = TRUE, outfile = "./ibdhaplo.markers")
+}
 }
 \references{
 MORGAN Tutorial, \url{https://www.stat.washington.edu/thompson/Stuff/morgan-tut.html}.
