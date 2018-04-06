@@ -22,14 +22,11 @@
 #' haplotype = sim.haplotype(freq, nhaplo)
 #' marker = sort(runif(7,0,100))
 #' write.ibdhaplo(marker, freq, haplotype, member = c("ind1", "ind2"), 
-#' input.haplotype = TRUE, outfile = "./ibdhaplo.markers")
+#' input.haplotype = TRUE)
 #' }
 #' @export
-write.ibdhaplo = function(marker, freq, data, member, input.allele = TRUE, input.haplotype = FALSE, outfile = NULL){
-  if(is.null(outfile)){
-    stop("Please specify an output file.")
-  }
-  
+write.ibdhaplo = function(marker, freq, data, member, input.allele = TRUE, input.haplotype = FALSE, outfile = tempfile("ibdhaplo", fileext = ".txt")){
+
   if(!input.allele){
     genotype = t(apply(data, 1, function(x) c(sapply(x, function(y) c(rep(1,y),rep(2,2-y))))))
   }else{
