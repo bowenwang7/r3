@@ -300,7 +300,7 @@ sim.haplotype = function(freq, nhaplo){
 #' geno = recode.snpdata(haplo, input.haplotype = TRUE, output.haplotype = TRUE)[[1]]
 #' populate.snp(inher, geno, marker, output.allele = FALSE)
 #' @export
-#' @useDynLib r3
+#' @useDynLib rres
 #' @importFrom Rcpp sourceCpp
 populate.snp = function(inheritance, haplotype, marker, member.index = NULL, output.allele = TRUE, output.haplotype = FALSE){
   nhaplo = length(inheritance) # total number of haplotypes

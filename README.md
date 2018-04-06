@@ -1,5 +1,5 @@
-# r3
-Realized Relatedness Rtools
+# rres
+Realized Relatedness Estimation and Simulation
 
 This package contains useful functions for studying realized genetic relatedness between individuals who can trace back to some recent common ancestors. Functions in this package fall into four main categories:
 

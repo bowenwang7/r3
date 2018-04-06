@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // process_snptext_cpp
 List process_snptext_cpp(DataFrame df, int snpmajor, int maref, int inhaplo, int outallele, int outhaplo);
-RcppExport SEXP _r3_process_snptext_cpp(SEXP dfSEXP, SEXP snpmajorSEXP, SEXP marefSEXP, SEXP inhaploSEXP, SEXP outalleleSEXP, SEXP outhaploSEXP) {
+RcppExport SEXP _rres_process_snptext_cpp(SEXP dfSEXP, SEXP snpmajorSEXP, SEXP marefSEXP, SEXP inhaploSEXP, SEXP outalleleSEXP, SEXP outhaploSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,7 +23,7 @@ END_RCPP
 }
 // read_bed_cpp
 IntegerMatrix read_bed_cpp(std::string file, int nind, int nsnp);
-RcppExport SEXP _r3_read_bed_cpp(SEXP fileSEXP, SEXP nindSEXP, SEXP nsnpSEXP) {
+RcppExport SEXP _rres_read_bed_cpp(SEXP fileSEXP, SEXP nindSEXP, SEXP nsnpSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -36,7 +36,7 @@ END_RCPP
 }
 // twostep_grm_cpp
 NumericMatrix twostep_grm_cpp(NumericMatrix genotype, NumericVector freq, NumericMatrix est0);
-RcppExport SEXP _r3_twostep_grm_cpp(SEXP genotypeSEXP, SEXP freqSEXP, SEXP est0SEXP) {
+RcppExport SEXP _rres_twostep_grm_cpp(SEXP genotypeSEXP, SEXP freqSEXP, SEXP est0SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -49,7 +49,7 @@ END_RCPP
 }
 // write_markers_cpp
 void write_markers_cpp(NumericVector marker, NumericVector freq, NumericMatrix genotype, CharacterVector memberID, std::string outfile);
-RcppExport SEXP _r3_write_markers_cpp(SEXP markerSEXP, SEXP freqSEXP, SEXP genotypeSEXP, SEXP memberIDSEXP, SEXP outfileSEXP) {
+RcppExport SEXP _rres_write_markers_cpp(SEXP markerSEXP, SEXP freqSEXP, SEXP genotypeSEXP, SEXP memberIDSEXP, SEXP outfileSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type marker(markerSEXP);
@@ -63,14 +63,14 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_r3_process_snptext_cpp", (DL_FUNC) &_r3_process_snptext_cpp, 6},
-    {"_r3_read_bed_cpp", (DL_FUNC) &_r3_read_bed_cpp, 3},
-    {"_r3_twostep_grm_cpp", (DL_FUNC) &_r3_twostep_grm_cpp, 3},
-    {"_r3_write_markers_cpp", (DL_FUNC) &_r3_write_markers_cpp, 5},
+    {"_rres_process_snptext_cpp", (DL_FUNC) &_rres_process_snptext_cpp, 6},
+    {"_rres_read_bed_cpp", (DL_FUNC) &_rres_read_bed_cpp, 3},
+    {"_rres_twostep_grm_cpp", (DL_FUNC) &_rres_twostep_grm_cpp, 3},
+    {"_rres_write_markers_cpp", (DL_FUNC) &_rres_write_markers_cpp, 5},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_r3(DllInfo *dll) {
+RcppExport void R_init_rres(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
